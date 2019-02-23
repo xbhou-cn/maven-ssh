@@ -5,4 +5,9 @@
 <fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.Action"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.interceptor.annotations.Allowed"/>
 <fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.AllowedMethods"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="xb.ssh.learn.service.IHello"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 </qualifiedTypeNameHistroy>

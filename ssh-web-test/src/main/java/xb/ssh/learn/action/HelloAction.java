@@ -6,14 +6,26 @@ import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 
+import xb.ssh.learn.service.IHello;
+
 @ParentPackage("basePackage")
 @Namespace("/")
 @Action("helloAction")
 @AllowedMethods("say")
 public class HelloAction {
 	private final Logger LOG = Logger.getLogger(HelloAction.class);
+	private IHello hello;
 
 	public void say() {
-		LOG.info("Hello Spring-struts");
+		LOG.info(hello.say("赵玉琴"));
 	}
+
+	public IHello getHello() {
+		return hello;
+	}
+
+	public void setHello(IHello hello) {
+		this.hello = hello;
+	}
+
 }

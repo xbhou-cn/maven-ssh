@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="helloAction!say.action">点击</a>
+	<a href="helloAction!say.action">点击</a>
 </body>
 </html>
