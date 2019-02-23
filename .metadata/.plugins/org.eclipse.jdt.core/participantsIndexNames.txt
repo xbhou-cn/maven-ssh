@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-E:\workspace\maven-ssh\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3146530628.index
-\ssh-web-test\src\main\resources

@@ -1,7 +1,0 @@
-package xb.ssh.learn.action;
-
-public class HelloAction {
-	public void say() {
-		System.out.println("Hello");
-	}
-}
