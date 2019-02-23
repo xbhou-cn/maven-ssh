@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.ParentPackage"/>
+<fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.Namespace"/>
+<fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.Action"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.interceptor.annotations.Allowed"/>
+<fullyQualifiedTypeName name="org.apache.struts2.convention.annotation.AllowedMethods"/>
+</qualifiedTypeNameHistroy>

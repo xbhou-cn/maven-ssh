@@ -1,0 +1,5 @@
+package xb.ssh.learn.action;
+
+public class HelloAction {
+
+}

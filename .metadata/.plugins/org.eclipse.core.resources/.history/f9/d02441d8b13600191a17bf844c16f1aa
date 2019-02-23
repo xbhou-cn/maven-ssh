@@ -1,0 +1,17 @@
+package xb.ssh.learn.action;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.AllowedMethods;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+
+import com.opensymphony.xwork2.interceptor.annotations.Allowed;
+@ParentPackage("basePackage")
+@Namespace("/")
+@Action("helloAction")
+public class HelloAction {
+	@Allowed
+	public void say() {
+		System.out.println("Hello");
+	}
+}

@@ -1,0 +1,11 @@
+package xb.ssh.learn.action;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ParentPackage;
+@ParentPackage("basePackage")
+@Action
+public class HelloAction {
+	public void say() {
+		System.out.println("Hello");
+	}
+}
