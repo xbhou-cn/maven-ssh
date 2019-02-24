@@ -1,5 +1,7 @@
 package xb.ssh.learn.service;
 
+import java.io.Serializable;
+
 public interface IHello {
-	public String say(String name);
+	public Serializable save(String name);
 }
