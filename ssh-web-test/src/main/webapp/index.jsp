@@ -11,69 +11,27 @@
 	src="js/jquery-easyui-1.7.4/jquery.easyui.min.js"></script>
 <script type="text/javascript"
 	src="js/jquery-easyui-1.7.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="js/myjs/xbUtil.js"></script>
 <link rel="stylesheet"
-	href="js/jquery-easyui-1.7.4/themes/default/easyui.css"
-	type="text/css" />
+	href="js/jquery-easyui-1.7.4/themes/default/easyui.css" type="text/css" />
 <link rel="stylesheet" href="js/jquery-easyui-1.7.4/themes/icon.css"
 	type="text/css" />
 </head>
 <body class="easyui-layout">
-	<div data-options="region:'north',title:'North Title',split:true"
+	<div data-options="region:'north',title:'North Title',split:true,border:false"
 		style="height: 100px;"></div>
-	<div data-options="region:'south',title:'South Title',split:true"
+	<div data-options="region:'south',title:'South Title',split:true,border:false"
 		style="height: 100px;"></div>
-	<div data-options="region:'east',title:'East',split:true"
-		style="width: 100px;"></div>
-	<div data-options="region:'west',split:true" style="width: 150px;">
-		<div class="easyui-panel" data-options="title:'菜单',fit:true">
-			<a href="helloAction!say.action">点击</a>
-		</div>
+	<div data-options="region:'east',title:'East',split:true,border:false"
+		style="width: 100px;"></div> 
+	<div data-options="region:'west',border:false,title:'功能导航'" style="width: 200px;">
+		<jsp:include page="layout/west.jsp"></jsp:include>
 	</div>
-	<div data-options="region:'center',title:'center title'"
-		style="background: #eee;"></div>
-	<div class="easyui-dialog" data-options="title:'登陆',closable:false,modal:true,buttons:[{
-				text:'注册',
-				iconCls:'icon-edit',
-				handler:function(){
-					$('#index_register').dialog('open');
-				}
-			},{
-				text:'登录',
-				iconCls:'icon-add',
-				handler:function(){}
-			}]"
-			style="width: 250px">
-		<table>
-			<tr>
-				<th>用户名</th>
-				<td><input /></td>
-			</tr>
-			<tr>
-				<th>密码</th>
-				<td><input /></td>
-			</tr>
-		</table>
+	<div data-options="region:'center',title:'欢迎使用'"
+		style="background: #eee;">
+		<jsp:include page="layout/center.jsp"></jsp:include>
 	</div>
-	<div id="index_register" class="easyui-dialog" data-options="title:'注册',closed:true,modal:true,buttons:[{
-				text:'注册',
-				iconCls:'icon-add',
-				handler:function(){}
-			}]" 
-		style="width: 250px">
-		<table>
-			<tr>
-				<th>用户名</th>
-				<td><input /></td>
-			</tr>
-			<tr>
-				<th>密码</th>
-				<td><input /></td>
-			</tr>
-			<tr>
-				<th>重复密码</th>
-				<td><input /></td>
-			</tr>
-		</table>
-	</div>
+	<jsp:include page="user/login.jsp"></jsp:include>
+	<jsp:include page="user/register.jsp"></jsp:include>
 </body>
 </html>
