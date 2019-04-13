@@ -34,8 +34,7 @@ public class UserBean implements Serializable {
     public void setUserID(String userID) {
         this.userID = userID;
     }
-
-    @Column(name = "userName", length = 10, unique = true)
+    @Column(name = "userName",  unique = true,columnDefinition="varchar(10) binary")
     public String getUserName() {
         return userName;
     }

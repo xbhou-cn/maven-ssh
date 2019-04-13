@@ -45,6 +45,21 @@ public class UserServiceImpl implements IUserService {
         return false;
     }
 
+    public User addUser(User user) {
+        UserBean target = new UserBean();
+        BeanUtils.copyProperties(user, target, new String[] { "password" });
+        target.setUserID(UUID.randomUUID().toString());
+        target.setCreateDateTime(new Date());
+        target.setPassword(md5.getMD5(user.getPassword()));
+        Serializable register = userDao.save(target);
+        if (register != null) {
+            User u = new User();
+            BeanUtils.copyProperties(target, u);
+            return u;
+        }
+        return null;
+    }
+
     public boolean login(User user) {
         UserBean target = new UserBean();
         BeanUtils.copyProperties(user, target, new String[] { "password" });
@@ -70,7 +85,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-         * 升序降序sql文拼接
+     * 升序降序sql文拼接
      * 
      * @param  user
      * @param  hql
@@ -92,7 +107,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-          *   返回值处理
+     * 返回值处理
      * 
      * @param  list
      * @param  count
@@ -109,5 +124,28 @@ public class UserServiceImpl implements IUserService {
         dataGrid.setTotal(count);
         dataGrid.setRows(nu);
         return dataGrid;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see xb.ssh.learn.service.IUserService#removeUser(java.lang.String)
+     */
+    public void removeUser(String ids) {
+        String[] idS = ids.split(",");
+        String hql = "from UserBean u where u.userID in( ";
+        for (int i = 0; i < idS.length; i++) {
+            hql += "'" + idS[i] + "',";
+            if (i == idS.length - 1) {
+                hql += "'" + idS[i] + "')";
+            }
+        }
+        List<UserBean> userbeans = this.userDao.get(hql);
+        if (userbeans == null || userbeans.size() == 0) {
+            throw new NullPointerException("不存在该用户或用户已删除");
+        }
+        for (UserBean user : userbeans) {
+            this.userDao.delete(user);
+        }
     }
 }

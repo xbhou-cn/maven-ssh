@@ -23,5 +23,4 @@ public class UserDaoImpl extends BaseDaoImpl<UserBean> implements IUserDao {
         }
         return false;
     }
-
 }

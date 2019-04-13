@@ -53,7 +53,7 @@
 				<th>密码</th>
 				<td><input type="password" name="password"
 					class="easyui-validatebox"
-					data-options="required:true,missingMessage:'登录名必填！'" /></td>
+					data-options="required:true,missingMessage:'密码必填！'" /></td>
 			</tr>
 		</table>
 	</form>

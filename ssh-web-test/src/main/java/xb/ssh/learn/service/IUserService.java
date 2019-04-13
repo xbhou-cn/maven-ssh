@@ -9,4 +9,18 @@ public interface IUserService {
     public boolean login(User user);
 
     public DataGrid<User> getDataGrid(User user);
+
+    /**
+         * 添加用户
+     * 
+     * @param  user
+     * @return
+     */
+    public User addUser(User user);
+
+    /**
+     * @param  ids
+     * @return
+     */
+    public void removeUser(String ids);
 }

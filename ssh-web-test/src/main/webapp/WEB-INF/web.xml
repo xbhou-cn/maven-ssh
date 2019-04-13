@@ -9,7 +9,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring.xml,classpath:spring-hibernate.xml</param-value>
 	</context-param>
-	<filter>
+	<!-- <filter>
 		<filter-name>openSessionInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
 		<init-param>
@@ -20,7 +20,7 @@
 			<param-name>flushMode</param-name>
 			<param-value>AUTO</param-value>
 		</init-param>
-	</filter>
+	</filter> -->
 	<!--这个过滤器就是针对于每次浏览器请求进行过滤的，然后再其之上添加了父类没有的功能即处理字符编码。 其中encoding用来设置编码格式，forceEncoding用来设置是否理会 
 		request.getCharacterEncoding()方法，设置为true则强制覆盖之前的编码格式。 -->
 	<filter>
@@ -44,17 +44,21 @@
 		<filter-name>openSessionInViewFilter</filter-name>
 		<url-pattern>*.action</url-pattern>
 	</filter-mapping> -->
+	<!-- struts2的配置 -->
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
 		<url-pattern>*.action</url-pattern>
 	</filter-mapping>
+	<!-- 字符编码过滤器 -->
 	<filter-mapping>
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!-- 加载spring的配置文件监听 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<!-- 服务启动画面左菜单内容加载监听 -->
 	<listener>
 		<listener-class>xb.ssh.learn.util.listener.RepairListener</listener-class>
 	</listener>
